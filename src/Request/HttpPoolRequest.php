@@ -213,6 +213,7 @@ class HttpPoolRequest
             'curl' => [
                 // CURLOPT_BINARYTRANSFER => true,
             ],
+            'verify' => false,
             RequestOptions::CONNECT_TIMEOUT => $this->options->timeout,
             // Allow redirects?
             // Set this to RequestOptions::ALLOW_REDIRECTS => false, to turn off.
