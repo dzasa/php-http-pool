@@ -38,12 +38,12 @@ class HttpPool
      *
      * @param  iterable  $requests Can be `string[]`, `mixed[]`, `array<mixed, mixed>`, `array`, `Collection`, `Collection<int,object>`
      */
-    public static function make(iterable $requests, bool $throwErrors = true): self
+    public static function make(iterable $requests, bool $throwErrors = true, ?HttpPoolOptions $options = null): self
     {
         $self = new self(
             requestsOrigin: $requests,
             requestCount: count($requests),
-            options: new HttpPoolOptions(),
+            options: $options ?? new HttpPoolOptions(),
             requests: collect([]),
             isAllowThrowErrors: $throwErrors,
         );
